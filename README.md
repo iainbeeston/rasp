@@ -15,7 +15,7 @@ end
 class EmailAspect < Rasp::Aspect
 
   before :slice, on: Cheese do |obj|
-    SpecialMailer.new.contact_buyer(obj.field_a, obj.field_b).deliver
+    PurchaseMailer.new.contact_buyer(obj.field_a, obj.field_b).deliver
   end
 
 end
